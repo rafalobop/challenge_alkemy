@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import '../css/navbar.css';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   return (
@@ -23,14 +24,14 @@ const NavBar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Heroes
-                </a>
+                <Link className="nav-link" to="/equipo">
+                  Nuevo Equipo
+                </Link>
               </li>
             </ul>
             <form className="form-inline my-2 my-0">

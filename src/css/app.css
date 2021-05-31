@@ -1,0 +1,7 @@
+.background {
+  background: url('https://media.metrolatam.com/2018/01/22/justiceleagueavengersdccomicsmarvelportada-1200x600.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
