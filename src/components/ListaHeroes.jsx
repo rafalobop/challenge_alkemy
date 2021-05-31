@@ -39,20 +39,41 @@ const ListaHeroes = () => {
                           className="back-img"
                         />
                       </div>
+                      <div className="bottom">
+                        <div className="hero-stats">
+                          <div className="stats-container">
+                            <p>Inteligencia: {info.powerstats.intelligence}</p>
+                            <p>Fuerza: {info.powerstats.strength}</p>
+                            <p>Velocidad: {info.powerstats.speed}</p>
+                            <p>Dureza: {info.powerstats.durability}</p>
+                            <p>Poder: {info.powerstats.power}</p>
+                            <p>Combate: {info.powerstats.combat}</p>
+                          </div>
+                        </div>
+                        <div className="overall-container">
+                          <div className="overall">
+                            <p></p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div className="face front">
                     <div className="card-front-container">
                       <div className="card-info">
                         <div className="card-header">
-                          <div className="publisher">
-                            <p>{info.biography.publisher}</p>
+                          <div className="top">
+                            <div className="publisher">
+                              <p>{info.biography.publisher}</p>
+                            </div>
+                            <div className="card-number">
+                              <h4>{info.id}</h4>
+                            </div>
                           </div>
-                          <div className="card-title">
-                            <h3>{info.name}</h3>
-                          </div>
-                          <div className="card-number">
-                            <h4>{info.id}</h4>
+                          <div className="bottom">
+                            <div className="card-title">
+                              <h3>{info.name}</h3>
+                            </div>
                           </div>
                         </div>
                         <div className="card-body">
@@ -65,33 +86,18 @@ const ListaHeroes = () => {
                           </div>
                         </div>
                         <div className="card-footer">
-                          <div className="hero-info">
-                            <ul>
-                              <li>{info.appearance.height[1]}</li>
-                              <li>{info.appearance.weight[1]}</li>
-                            </ul>
-                          </div>
-                          <div className="hero-description">
-                            <ul>
-                              <li>{info.biography.fullName}</li>
-                              <li>{info.biography.aliases[0]}</li>
-                              <li>{info.biography.placeOfBirth}</li>
-                            </ul>
-                          </div>
-
-                          <div className="hero stats">
-                            <ul>
-                              <li>{info.powerstats.intelligence}</li>
-                              <li>{info.powerstats.strenght}</li>
-                              <li>{info.powerstats.speed}</li>
-                              <li>{info.powerstats.durability}</li>
-                              <li>{info.powerstats.power}</li>
-                              <li>{info.powerstats.combat}</li>
-                            </ul>
-                          </div>
-                          <div className="overall-container">
-                            <div className="overall">
-                              <p></p>
+                          <div className="top">
+                            <div className="hero-info">
+                              <div className="height">
+                                <h4>Height</h4>
+                                <hr />
+                                <p>{info.appearance.height[1]}</p>
+                              </div>
+                              <div className="weight">
+                                <h4>Weight</h4>
+                                <hr />
+                                <p>{info.appearance.weight[1]}</p>
+                              </div>
                             </div>
                           </div>
                         </div>
