@@ -20,13 +20,16 @@ const Card = () => {
     // console.log(datos);
     return datos;
   });
-
+  const heroFilter = heroe.data.filter((heroe) => {
+    return heroe.name.toLowerCase().includes(inputValue.toLowerCase());
+  });
+  console.log(`hero`, heroFilter);
   return (
     <>
       {datosHeroes.map((info) => {
-        console.log(info.id);
+        // console.log(info.id);
         return (
-          <div className="card">
+          <div className="card" key={info.id}>
             <div className="face back">
               <div className="card-back-container">
                 <div className="back-img-container">
