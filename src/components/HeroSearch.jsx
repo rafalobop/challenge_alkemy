@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/search.css';
 
 const HeroSearch = ({ inputValue, setInputValue }) => {
   const handleChange = (e) => {
@@ -11,7 +12,7 @@ const HeroSearch = ({ inputValue, setInputValue }) => {
         <input
           type="text"
           className="form-control"
-          placeholder="Heroe o villano..."
+          placeholder="Ingrese el nombre de su heroe o villano..."
           value={inputValue}
           onChange={handleChange}
         />

@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../css/card.css';
+import ModalHero from '../components/ModalHero';
+// import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 
 const Card = ({ item }) => {
+  const [openModal, setOpenModal] = useState(false);
+  const toggle = () => setOpenModal(!openModal);
+
   return (
     <>
-      <div className="card" key={item.id}>
+      <div className="card" key={item.id} onClick={toggle}>
         <div className="face back">
           <div className="card-back-container">
             <div className="back-img-container">
               <img src={item.images.sm} alt={item.name} className="back-img" />
+              <ModalHero openModal={openModal} toggle={toggle} item={item} />
             </div>
             <div className="bottom">
               <div className="hero-stats">
