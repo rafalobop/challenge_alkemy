@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import '../css/navbar.css';
@@ -34,20 +34,6 @@ const NavBar = () => {
                 </Link>
               </li>
             </ul>
-            <form className="form-inline my-2 my-0">
-              <input
-                className="form-control"
-                type="search"
-                placeholder="Buscar Heroe"
-                aria-label="Search"
-              ></input>
-              <button
-                className="btn btn-outline-success my-2 my-sm-0"
-                type="submit"
-              >
-                Buscar
-              </button>
-            </form>
           </div>
         </nav>
       </div>
