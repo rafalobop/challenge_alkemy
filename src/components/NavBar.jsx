@@ -30,7 +30,7 @@ const NavBar = () => {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/equipo">
-                  Nuevo Equipo
+                  Mi Equipo
                 </Link>
               </li>
             </ul>

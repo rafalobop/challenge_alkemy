@@ -1,7 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import '../css/modalhero.css';
+import swal from 'sweetalert';
 const ModalHero = ({ openModal, toggle, item }) => {
+  const agregarHeroe = (e) => {
+    e.preventDefault();
+    swal({
+      title: 'Listo!',
+      text: 'Heroe agregado al equipo!',
+      icon: 'success',
+    });
+    toggle();
+  };
   return (
     <>
       <Modal isOpen={openModal} toggle={toggle} className="modal-hero">
@@ -44,7 +54,9 @@ const ModalHero = ({ openModal, toggle, item }) => {
           <Button className="button-modal" onClick={toggle}>
             Cerrar
           </Button>
-          <Button className="button-add">Agregar al Equipo</Button>
+          <Button className="button-add" onClick={agregarHeroe}>
+            Agregar al Equipo
+          </Button>
         </ModalFooter>
       </Modal>
     </>

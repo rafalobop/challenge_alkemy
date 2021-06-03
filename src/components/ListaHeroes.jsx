@@ -21,9 +21,6 @@ const ListaHeroes = () => {
       });
     });
   }, []);
-  // const datosHeroes = heroes.data.map((item) => {
-  //   return item;
-  // });
 
   if (!heroes.loading) {
     heroesFilter = heroes.data.filter((heroes) => {

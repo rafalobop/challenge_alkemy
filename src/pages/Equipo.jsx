@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import '../css/equipo.css';
+import EquipoList from '../components/EquipoList';
+import { getHeroes } from '../helpers/rutaHeroes';
 const Equipo = () => {
+  const [teamList, useTeamList] = useState([]);
+  const onClick = (hero) => {
+    useTeamList = [...teamList, hero];
+  };
+
+  useEffect(() => {
+    getHeroes().then((hero) => {
+      console.log(hero);
+    });
+  }, []);
+
   return (
     <>
-      <div className="equipo container">
-        <h1>Crea tu Equipo</h1>
-        <div className="datos-equipo">
-          <form action="">
-            <label htmlFor="name">Nombre del equipo</label>
-            <input type="text" placeholder="Ingresa el nombre" />
-            <button>Crear Equipo</button>
-          </form>
-        </div>
-        <div className="heroes-list"> </div>
-      </div>
+      {teamList.length === 0 && <h1 className="team-title">Crea tu Equipo</h1>}
+      <EquipoList
+        onClick={onClick}
+        teamList={teamList}
+        useTeamList={useTeamList}
+      />
     </>
   );
 };
