@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-// import Card from '../components/Card';
+import '../css/modalhero.css';
 const ModalHero = ({ openModal, toggle, item }) => {
-  console.log(item);
-
   return (
     <>
       <Modal isOpen={openModal} toggle={toggle} className="modal-hero">
         <ModalHeader>
-          <div className="modal-header">
+          <div className="modal-header-top">
             <div className="modal-top">
               <div className="modal-publisher">
                 <p>{item.biography.publisher}</p>
@@ -26,7 +24,9 @@ const ModalHero = ({ openModal, toggle, item }) => {
         </ModalHeader>
         <ModalBody>
           <div className="modal-left">
-            <img src={item.images.md} alt={item.name} />
+            <div className="modal-img-container">
+              <img src={item.images.md} alt={item.name} />
+            </div>
           </div>
           <div className="modal-right">
             <div className="modal-info">
@@ -41,9 +41,10 @@ const ModalHero = ({ openModal, toggle, item }) => {
           </div>
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>
+          <Button className="button-modal" onClick={toggle}>
             Cerrar
           </Button>
+          <Button className="button-add">Agregar al Equipo</Button>
         </ModalFooter>
       </Modal>
     </>

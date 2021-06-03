@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../css/card.css';
 import ModalHero from '../components/ModalHero';
-// import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 
 const Card = ({ item }) => {
   const [openModal, setOpenModal] = useState(false);
