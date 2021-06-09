@@ -11,7 +11,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.1",
-    "formik": "^2.2.8",
+    "formik": "^2.2.9",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.0",
     "react-bootstrap-4-pagination": "^1.0.4",

@@ -9,6 +9,15 @@ const ListaHeroes = () => {
     data: [],
     loading: true,
   });
+  const [contarPagina, setContarPagina] = useState(0);
+  useEffect(() => {
+    getHeroes(contarPagina).then((datos) => {
+      setHeroes({
+        data: datos,
+        loading: false,
+      });
+    });
+  }, [contarPagina]);
 
   const [inputValue, setInputValue] = useState('');
   let heroesFilter = [];
@@ -21,6 +30,23 @@ const ListaHeroes = () => {
       });
     });
   }, []);
+
+  const handlePaginaNext = () => {
+    let cantidadArray = heroes.data.length;
+    if (cantidadArray >= 10) {
+      setContarPagina(contarPagina + 10);
+    }
+  };
+
+  const handlePaginaPrev = () => {
+    if (contarPagina >= 10) {
+      setContarPagina(contarPagina - 10);
+    }
+  };
+
+  const datosHeroes = heroes.data.map((item) => {
+    return item;
+  });
 
   if (!heroes.loading) {
     heroesFilter = heroes.data.filter((heroes) => {
@@ -37,8 +63,32 @@ const ListaHeroes = () => {
       <div className="search">
         <HeroSearch inputValue={inputValue} setInputValue={setInputValue} />
       </div>
+      <div className="pagination">
+        <button
+          className="btn btn-outline-info mr-2"
+          onClick={handlePaginaPrev}
+          disabled={contarPagina === 0 ? true : false}
+        >
+          <i className="fa fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button
+          className="btn btn-outline-info"
+          onClick={handlePaginaNext}
+          disabled={heroes.data.length < 10 ? true : false}
+        >
+          <i className="fa fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
 
       <div className="list-container">
+        {heroes.loading && (
+          <div className="lds-roller">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        )}
         {!heroes.loading && (
           <div className="row">
             {heroesFilter.map((item) => {

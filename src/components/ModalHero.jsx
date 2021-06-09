@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import '../css/modalhero.css';
 import swal from 'sweetalert';
 const ModalHero = ({ openModal, toggle, item }) => {
-  const agregarHeroe = (e) => {
-    e.preventDefault();
-    swal({
-      title: 'Listo!',
-      text: 'Heroe agregado al equipo!',
-      icon: 'success',
-    });
-    toggle();
+  const [team, setTeam] = useState([]);
+
+  const agregarHeroe = () => {
+    // e.preventDefault();
+    setTeam([...team, item]);
+    console.log('agregado');
+    // swal({
+    //   title: 'Listo!',
+    //   text: 'Heroe agregado al equipo!',
+    //   icon: 'success',
+    // });
+    // toggle();
+    console.log(team.length);
+    console.log(team);
   };
   return (
     <>
@@ -54,7 +60,7 @@ const ModalHero = ({ openModal, toggle, item }) => {
           <Button className="button-modal" onClick={toggle}>
             Cerrar
           </Button>
-          <Button className="button-add" onClick={agregarHeroe}>
+          <Button className="button-add" onClick={() => agregarHeroe(item)}>
             Agregar al Equipo
           </Button>
         </ModalFooter>

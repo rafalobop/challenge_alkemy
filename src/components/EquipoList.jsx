@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 import swal from 'sweetalert';
+import MyTeam from '../components/MyTeam';
+// import { Formik, Form, Field } from 'formik';
 
 const EquipoList = () => {
-  const [teamName, setTeamName] = useState({
+  const [team, setTeam] = useState({
     name: '',
     heroes: [],
   });
-  //   console.log(teamName);
 
   const handleChange = (e) => {
-    setTeamName({
-      name: e.target.value,
+    setTeam({
+      [team.name]: e.target.value,
     });
   };
   const saveTeam = (e) => {
     e.preventDefault();
-    setTeamName({
-      name: e.target.value,
+    setTeam({
+      [team.name]: e.target.value,
     });
-    console.log(teamName);
     swal({
       title: 'Listo!',
       text: 'Equipo Creado!',
@@ -26,8 +26,10 @@ const EquipoList = () => {
     });
     e.target.reset();
   };
+
   return (
     <>
+      <h1>{team.name}</h1>
       <div className="equipo-container">
         <div className="datos-equipo">
           <form action="" onSubmit={saveTeam}>
@@ -42,6 +44,7 @@ const EquipoList = () => {
         </div>
         <div className="heroes-list"></div>
       </div>
+      <MyTeam />;
     </>
   );
 };
