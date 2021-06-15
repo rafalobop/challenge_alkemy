@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../css/card.css';
 import ModalHero from '../components/ModalHero';
 
-const Card = ({ item }) => {
+const Card = ({ item, id }) => {
   const [openModal, setOpenModal] = useState(false);
   const toggle = () => setOpenModal(!openModal);
 
@@ -13,7 +13,12 @@ const Card = ({ item }) => {
           <div className="card-back-container">
             <div className="back-img-container">
               <img src={item.images.sm} alt={item.name} className="back-img" />
-              <ModalHero openModal={openModal} toggle={toggle} item={item} />
+              <ModalHero
+                openModal={openModal}
+                toggle={toggle}
+                item={item}
+                id={id}
+              />
             </div>
             <div className="bottom">
               <div className="hero-stats">

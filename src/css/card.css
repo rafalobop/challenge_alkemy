@@ -36,7 +36,6 @@
   color: #000;
   background: url('https://i.pinimg.com/originals/90/72/80/907280526f902884ceae47fffefb8289.jpg')
     no-repeat;
-
   transform: perspective(500px) rotateY(180deg);
 }
 .card:hover .face.back {

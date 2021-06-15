@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import '../css/modalhero.css';
 import swal from 'sweetalert';
 const ModalHero = ({ openModal, toggle, item }) => {
   const [team, setTeam] = useState([]);
 
-  const agregarHeroe = () => {
-    // e.preventDefault();
-    setTeam([...team, item]);
-    console.log('agregado');
-    // swal({
-    //   title: 'Listo!',
-    //   text: 'Heroe agregado al equipo!',
-    //   icon: 'success',
-    // });
-    // toggle();
-    console.log(team.length);
-    console.log(team);
+  const agregarHeroe = (id, name) => {
+    console.log(id, name);
+    swal({
+      title: 'Listo!',
+      text: 'Heroe agregado al equipo!',
+      icon: 'success',
+    });
+    toggle();
   };
+  // useEffect((id) => {
+  //   setTeam([...team, id]);
+  // }, []);
   return (
     <>
       <Modal isOpen={openModal} toggle={toggle} className="modal-hero">

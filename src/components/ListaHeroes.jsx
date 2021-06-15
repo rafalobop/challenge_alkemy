@@ -93,7 +93,7 @@ const ListaHeroes = () => {
           <div className="row">
             {heroesFilter.map((item) => {
               // console.log(item);
-              return <Card key={item.id} item={item} />;
+              return <Card key={item.id} item={item} id={item.id} />;
             })}
           </div>
         )}
